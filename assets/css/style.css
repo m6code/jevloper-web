@@ -1,0 +1,17 @@
+html, .container {
+    height: 100%;
+}
+#bg-color-content{
+    background-color: #949494;
+}
+.container {
+    display: table;
+    vertical-align: middle;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+.footer-bg{
+    background-color: #607D8B;
+}
