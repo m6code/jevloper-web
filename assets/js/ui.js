@@ -25,16 +25,23 @@ class UI {
             // span for the user name text
             let username = document.createElement("span");
 
-            // append user name from the json data query
-            username.append(`${data["profiles"]["items"][i]["login"]}`);
-            username.className = 'mdl-color-text--blue-grey-50 ml-2';
-
             // append the username text and image from json data
             userProfileDiv.append(userImage);
             userProfileDiv.append(username);
             userProfileDiv.className = "mt-4";
 
             // TODO: Create Link to launch github user profile
+            // Create anchor tag
+            let anchorTag = document.createElement("a");
+            anchorTag.setAttribute('href', `${data["profiles"]["items"][i]["html_url"]}`);
+            anchorTag.innerHTML = `${data["profiles"]["items"][i]["login"]}`;
+            anchorTag.setAttribute('target', '_blank');
+
+            // append user name from the json data query
+            username.className = 'mdl-color-text--blue-grey-50 ml-2';
+            username.append(anchorTag);
+
+
             // TODO: Arrange the ui
             // Todo: use rounded corner images
             // Todo: fix padding and margin
